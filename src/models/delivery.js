@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = Promise;
 
 const deliverySchema = new mongoose.Schema({
+  id: String,
   name: String,
   weight: Number,
   addressName: String,
@@ -17,3 +18,5 @@ const deliverySchema = new mongoose.Schema({
   inserted: { type: Date, default: Date.now },
   lastUpdate: { type: Date, default: Date.now },
 });
+
+module.exports = () => mongoose.model('Delivery', deliverySchema);

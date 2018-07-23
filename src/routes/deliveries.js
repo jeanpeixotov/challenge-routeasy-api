@@ -12,7 +12,7 @@ module.exports = (app) => {
   app.route('/deliveries')
     .delete(Controller.removeDelivery);
 
-  app.route('/deliveries')
+  app.route('/deliveries/:deliveryId')
     .get(Controller.listDelivery);
   
   app.use(errorHandler());

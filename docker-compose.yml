@@ -3,7 +3,7 @@ version: '3'
 services:
     routeasy:
         build: .
-        container_name: leafletjs
+        container_name: challenge
         environment:
             - PORT=3000
             - NODE_ENV=development

@@ -1,7 +1,7 @@
 import { joi, validateAsPromise } from '../../services/joi.config';
 
 const schema = joi.object().keys({
-  _id: joi.string().guid().allow(null),
+  id: joi.string().guid().allow(null),
   name: joi.string(),
   weight: joi.number(),
   addressName: joi.string(),
