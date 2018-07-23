@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    routeasy:
+        build: .
+        container_name: leafletjs
+        environment:
+            - PORT=3000
+            - NODE_ENV=development
+            - CLIENT_DB_URI=mongo:27017
+        ports:
+            - "3000:3000"
+        volumes:
+            - './src:/app/src'
+            - './test:/app/test'
+            - './package.json:/app/package.json'
+        depends_on:
+            - mongo
+
+    mongo:
+        image: mongo:3.4
+        volumes:
+            - '/data/db:/data/db'
