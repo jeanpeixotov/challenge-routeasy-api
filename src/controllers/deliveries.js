@@ -4,7 +4,7 @@ module.exports = (app) => {
   const Delivery = app.models.delivery;
   const Controller = {};
 
-  Controller.listDelivery = (req, res, next) => {
+  Controller.listDelivery = async (req, res, next) => {
     try {
       const result = await Delivery.findOne({ _id: res.params.deliveryId });
       return res.json.bind(result);
@@ -13,7 +13,7 @@ module.exports = (app) => {
     }
   };
 
-  Controller.addDelivery = (req, res, next) => {
+  Controller.addDelivery = async (req, res, next) => {
     try {
       const body = await validateBody(req.body);
       await Delivery.save(body);
@@ -28,10 +28,10 @@ module.exports = (app) => {
     }
   };
 
-  Controller.updateDelivery = (req, res, next) => {
+  Controller.updateDelivery = async (req, res, next) => {
     try {
       const body = await validateBody(req.body);
-      await Delivery.update({ _id: body.id });
+      await Delivery.update({ _id: body._id });
       return res.json({
         success: true,
         message: 'Delivery updated!',
@@ -41,10 +41,9 @@ module.exports = (app) => {
     }
   };
 
-  Controller.removeDelivery = (req, res, next) => {
+  Controller.removeDelivery = async (req, res, next) => {
     try {
-      const body = await validateBody(req.body);
-      const result = await Delivery.remove({ _id: body.id });
+      const result = await Delivery.remove({ _id: res.params.deliveryId });
       return res.json({
         success: true,
         message: 'Delivery deleted!',

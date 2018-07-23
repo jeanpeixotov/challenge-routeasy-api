@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 mongoose.Promise = Promise;
 
 const deliverySchema = new mongoose.Schema({
-  id: String,
   name: String,
   weight: Number,
   addressName: String,

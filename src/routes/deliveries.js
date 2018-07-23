@@ -9,11 +9,11 @@ module.exports = (app) => {
   app.route('/deliveries')
     .put(Controller.updateDelivery);
 
-  app.route('/deliveries')
-    .delete(Controller.removeDelivery);
-
   app.route('/deliveries/:deliveryId')
     .get(Controller.listDelivery);
+
+  app.route('/deliveries/:deliveryId')
+    .delete(Controller.removeDelivery);
   
   app.use(errorHandler());
 };

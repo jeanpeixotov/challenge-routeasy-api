@@ -1,0 +1,36 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "node": true,
+    "mocha": true,
+    "mongo": true
+  },
+  "globals": {
+    "app": true,
+    "request": true,
+    "expect": true
+  },
+  "plugins": [
+    "json"
+  ],
+  "rules": {
+    "no-underscore-dangle": [2, {
+      "allow": ["_id", "__"]
+    }],
+    "no-param-reassign": [2, {
+      "props": false
+    }],
+    "max-len": [2, {
+      "ignoreComments": true,
+      "ignoreRegExpLiterals": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreStrings": true
+    }],
+    "import/no-dynamic-require": 0,
+    "comma-dangle": [2, {
+      "functions": "never",
+      "objects": "always-multiline"
+    }]
+  }
+
+}

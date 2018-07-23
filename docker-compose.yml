@@ -9,11 +9,11 @@ services:
             - NODE_ENV=development
             - CLIENT_DB_URI=mongo:27017
         ports:
-            - "3000:3000"
+            - "3000"
         volumes:
-            - './src:/app/src'
-            - './test:/app/test'
-            - './package.json:/app/package.json'
+            - './src:/home/app/src'
+            - './test:/home/app/test'
+            - './package.json:/home/app/package.json'
         depends_on:
             - mongo
 
