@@ -1,5 +1,5 @@
 const requiredEnvVars = [
-  'CLIENT_DB_URI',
+  'DELIVERY_DB_URI',
   'PORT',
 ];
 
@@ -14,5 +14,5 @@ checkEnvVars();
 
 module.exports = {
   port: process.env.PORT,
-  clientDBUri: `mongodb://${process.env.CLIENT_DB_URI}`,
+  deliveryDBUri: `mongodb://${process.env.DELIVERY_DB_URI}`,
 };

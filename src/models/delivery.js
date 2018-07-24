@@ -1,8 +1,8 @@
-const Promise = require('bluebird');
 const mongoose = require('mongoose');
-mongoose.Promise = Promise;
 
-const deliverySchema = new mongoose.Schema({
+const { Schema } = mongoose;
+
+const Delivery = new Schema({
   name: String,
   weight: Number,
   addressName: String,
@@ -12,10 +12,10 @@ const deliverySchema = new mongoose.Schema({
   city: String,
   state: String,
   country: String,
-  geolocationLatitude: String,
-  geolocationLongitude: String,
+  geolocationLatitude: Number,
+  geolocationLongitude: Number,
   inserted: { type: Date, default: Date.now },
   lastUpdate: { type: Date, default: Date.now },
 });
 
-module.exports = () => mongoose.model('Delivery', deliverySchema);
+module.exports = app => app.db.Delivery.model('delivery', Delivery);

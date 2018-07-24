@@ -5,5 +5,6 @@ const config = require('./config');
 mongoose.Promise = Promise;
 
 module.exports = () => {
-  return mongoose.createConnection(config.clientDBUri);
+  const Delivery = mongoose.createConnection(config.deliveryDBUri);
+  return { Delivery };
 };

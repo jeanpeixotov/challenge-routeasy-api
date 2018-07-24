@@ -6,10 +6,9 @@ services:
         container_name: challenge
         environment:
             - PORT=3000
-            - NODE_ENV=development
-            - CLIENT_DB_URI=mongo:27017
+            - DELIVERY_DB_URI=mongo:27017
         ports:
-            - "3000"
+            - "3000:3000"
         volumes:
             - './src:/home/app/src'
             - './test:/home/app/test'
