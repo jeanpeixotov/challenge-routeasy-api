@@ -3,6 +3,7 @@ const createError = require('http-errors');
 const schema = joi.object().keys({
   _id: joi.string().allow(null),
   name: joi.string().required(),
+  addressClientFormat: joi.string().required(),
   weight: joi.number().required(),
   addressName: joi.string().required(),
   addressNumber: joi.number().required(),

@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-    routeasy:
+    routeasy-api:
         build: .
-        container_name: challenge
+        container_name: challenge-api
         environment:
             - PORT=3000
             - DELIVERY_DB_URI=mongo:27017

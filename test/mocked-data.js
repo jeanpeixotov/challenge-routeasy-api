@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const deliveryInsert = {
   name: 'Joao da Silva',
+  addressClientFormat: '1600 Amphitheatre Parkway, Mountain View, CA',
   weight: 30,
   addressName: 'Rua Alvorada',
   addressNumber: 100,
@@ -18,6 +19,7 @@ const deliveryInsert = {
 const deliveryInserted = {
   _id: '5b57853c51e9410020bba941',
   name: 'Joao da Silva',
+  addressClientFormat: '1600 Amphitheatre Parkway, Mountain View, CA',
   weight: 30,
   addressName: 'Rua Alvorada',
   addressNumber: 100,
@@ -34,6 +36,7 @@ const deliveryInserted = {
 
 const deliveryUpdate = {
   _id: '5b57853c51e9410020bba941',
+  addressClientFormat: '1600 Amphitheatre Parkway, Mountain View, CA',
   name: 'Pedro Cardoso',
   addressName: 'Rua das araucarias',
   addressNumber: 50,

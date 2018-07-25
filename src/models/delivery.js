@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 
 const Delivery = new Schema({
   name: String,
+  addressClientFormat: String,
   weight: Number,
   addressName: String,
   addressNumber: Number,
