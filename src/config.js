@@ -1,6 +1,7 @@
 const requiredEnvVars = [
   'DELIVERY_DB_URI',
   'PORT',
+  'GOOGLE_KEY'
 ];
 
 const checkEnvVars = (() => {
@@ -15,4 +16,5 @@ checkEnvVars();
 module.exports = {
   port: process.env.PORT,
   deliveryDBUri: `mongodb://${process.env.DELIVERY_DB_URI}`,
+  googleKey: process.env.GOOGLE_KEY,
 };

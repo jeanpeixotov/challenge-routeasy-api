@@ -7,8 +7,9 @@ services:
         environment:
             - PORT=3000
             - DELIVERY_DB_URI=mongo:27017
+            - GOOGLE_KEY=AIzaSyAM4j_CWKzOBsxJZSK138XbBHk0U0t8R44
         ports:
-            - "3000:3000"
+            - "4000:3000"
         volumes:
             - './src:/home/app/src'
             - './test:/home/app/test'
